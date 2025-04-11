@@ -9,7 +9,7 @@ const chats = [
         {
           name: "Piyush",
           email: "piyush@example.com",
-        },
+        }
       ],
       _id: "617a077e18c25468bc7c4dd4",
       chatName: "John Doe",
