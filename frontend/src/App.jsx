@@ -1,4 +1,4 @@
-
+import { Button, HStack } from "@chakra-ui/react"
 import './App.css'
 
 function App() {
@@ -6,7 +6,11 @@ function App() {
 
   return (
     <>
-     <h1>Hello today i have to complete video number 5</h1>
+     <HStack>
+      <Button>Click me</Button>
+      <Button>Click me</Button>
+    </HStack>
+
     </>
   )
 }
