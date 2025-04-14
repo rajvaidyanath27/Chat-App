@@ -6,8 +6,12 @@ export default defineConfig({
   plugins: [react()],
   resolve: {
     alias: {
-      // eslint-disable-next-line no-undef
       '@': path.resolve(__dirname, './src'),
+    },
+  },
+  server: {
+    proxy: {
+      '/api': 'http://localhost:5000', // 👈 This forwards all /api requests to your backend
     },
   },
 })
