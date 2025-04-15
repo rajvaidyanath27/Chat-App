@@ -19,6 +19,7 @@
   "homepage": "https://github.com/rajvaidyanath27/Chat-App#readme",
   "dependencies": {
     "dotenv": "^16.4.7",
-    "express": "^5.1.0"
+    "express": "^5.1.0",
+    "mongoose": "^8.13.2"
   }
 }

@@ -8,7 +8,7 @@ const Chatpage = () => {
     try {
       const { data } = await axios.get('/api/chat');
       setChats(data);
-      console.log(data); // For debugging
+      console.log(data); 
     } catch (error) {
       console.error('Error fetching chats:', error);
     }
