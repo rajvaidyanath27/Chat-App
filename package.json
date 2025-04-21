@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/rajvaidyanath27/Chat-App#readme",
   "dependencies": {
+    "bcryptjs": "^3.0.2",
     "dotenv": "^16.4.7",
     "express": "^5.1.0",
     "express-async-handler": "^1.2.0",
