@@ -2,11 +2,16 @@ const express = require('express');
 const { chats }  = require('./data.js');
 const dotenv = require('dotenv');
 const connectDB = require('./config/db.js');
+const userRoutes = require('./routes/userRoutes.js');
 
 
 const app = express();
 dotenv.config();
 connectDB();
+
+app.use(express.json()); 
+
+app.use('/api/user', userRoutes);
 
 app.get('/', (req, res) => {
     res.send('API is running successfully but bc data??...');
