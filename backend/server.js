@@ -3,6 +3,7 @@ const { chats }  = require('./data.js');
 const dotenv = require('dotenv');
 const connectDB = require('./config/db.js');
 const userRoutes = require('./routes/userRoutes.js');
+const { notFound, errorHandler } = require('./middleware/errorMiddleware.js');
 
 
 const app = express();
@@ -12,6 +13,9 @@ connectDB();
 app.use(express.json()); 
 
 app.use('/api/user', userRoutes);
+
+app.use(notFound);
+app.use(errorHandler); 
 
 app.get('/', (req, res) => {
     res.send('API is running successfully but bc data??...');
@@ -27,7 +31,7 @@ app.get('/api/chat/:id', (req,res) => {
     res.send(singlechat);
 })
 
-const { notFound, errorHandler } = require('./middleware/errorMiddleware');
+ const { notFound, errorHandler } = require('./middleware/errorMiddleware');
 app.use(notFound);
 app.use(errorHandler);
 
