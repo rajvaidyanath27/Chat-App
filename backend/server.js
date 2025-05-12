@@ -32,7 +32,7 @@ app.get('/api/chat/:id', (req,res) => {
     res.send(singlechat);
 })
 
- const { notFound, errorHandler } = require('./middleware/errorMiddleware');
+
 app.use(notFound);
 app.use(errorHandler);
 
