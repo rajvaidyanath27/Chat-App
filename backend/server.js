@@ -3,6 +3,7 @@ const { chats }  = require('./data.js');
 const dotenv = require('dotenv');
 const connectDB = require('./config/db.js');
 const userRoutes = require('./routes/userRoutes.js');
+const chatsRoutes = require('./routes/chatRoutes.js');
 const { notFound, errorHandler } = require('./middleware/errorMiddleware.js');
 
 
@@ -13,6 +14,7 @@ connectDB();
 app.use(express.json()); 
 
 app.use('/api/user', userRoutes);
+app.use('/api/chat', chatsRoutes);
 
 app.use(notFound);
 app.use(errorHandler); 
@@ -23,8 +25,7 @@ app.get('/', (req, res) => {
 
 app.get('/api/chat', (req, res) => {
     res.send(chats);
-}
-);
+});
 
 app.get('/api/chat/:id', (req,res) => {
     const singlechat = chats.find((c) => c._id == req.params.id);
