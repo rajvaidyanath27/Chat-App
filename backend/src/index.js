@@ -1,8 +1,8 @@
 import express from "express";
 const app = express();
 import dotenv from "dotenv";
-// import cookieParser from "cookie-parser";
-// import cors from "cors";
+import cookieParser from "cookie-parser";
+import cors from "cors";
 
 import { fileURLToPath } from "url";
 
@@ -22,7 +22,7 @@ const PORT = process.env.PORT;
 
 
 app.use(express.json());
-// app.use(cookieParser());
+app.use(cookieParser());
 // app.use(
 //   cors({
 //     origin: "http://localhost:5173",
